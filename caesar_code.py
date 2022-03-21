@@ -4,15 +4,16 @@ direction = input("Would you like to encode or decode a text ")
 text = input("Please enter the text ")
 shift = int(input("Enter the number for shift "))
 
-def caesar_cipher(text_start,shift_amount,direction_side):
+def caesar_cipher(text_start,shift_amount,direction):
     updated_text = ""
+    if(direction == "decode"):
+            shift_amount *= -1
     for i in range(len(text_start)):
         position = list.index(text[i])
-        if(direction == "decode"):
-            shift_amount * -1
+        
         new_position = position+shift_amount
         updated_text += list[new_position]
     print(updated_text)
     
-caesar_cipher(text_start=text,shift_amount=shift, direction_side=direction)
+caesar_cipher(text_start=text,shift_amount=shift,direction = direction)
 
